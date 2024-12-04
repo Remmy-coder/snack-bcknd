@@ -4,12 +4,12 @@ import {
   Column,
   Entity,
   PrimaryGeneratedColumn,
-} from "typeorm";
-import * as bcrypt from "bcrypt";
+} from 'typeorm';
+import * as bcrypt from 'bcrypt';
 
 @Entity()
 export class Client extends BaseEntity {
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
@@ -18,7 +18,7 @@ export class Client extends BaseEntity {
   @Column()
   surname: string;
 
-  @Column()
+  @Column({ unique: true })
   email: string;
 
   @Column()

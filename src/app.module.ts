@@ -12,7 +12,7 @@ import * as path from "path";
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
       type: "postgres",
-      host: "localhost",
+      host: String(process.env.POSTGRES_HOST),
       port: +process.env.DATABASE_PORT,
       username: String(process.env.POSTGRES_USER),
       password: String(process.env.POSTGRES_PASSWORD),
